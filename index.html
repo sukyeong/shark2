@@ -1,0 +1,279 @@
+<idoctype html>
+	<head>
+		<meta charset = "utf-8">
+	<link href='normalize.css' rel="stylesheet">
+	<link href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
+       
+       <title>상어가족</title>
+       
+       <style>
+
+        		.bubble{
+			width:150px; height:150px; 
+			background:url('bubble_1.png');
+			background-size:100% auto;
+			background-repeat:no-repeat;
+			animation: bMove 8s linear;
+
+		}
+		@keyframes bMove{
+			0%{ background-position: 0 700px; opacity:0;}
+			20%{opacity:1;}
+			80%{ opacity:1; }
+			100%{ background-position:0 0;opacity:0;}
+		}
+
+       html { font-family: 'Spoqa Han Sans'; font-weight: 200;}
+		.section{height:800px;width:100%;position: relative}
+			
+
+
+       	header #logo{width:1000px;height:2000px;text-align: center;height:44px;line-height: 44px;font-size: 2em;font-weight: 600;position:relative;left:calc(-10% - 200px);transition: all 0.3s;color:yellow;  }
+       	
+       	header #menu{width:100px;height:30px;position:relative;top:150px;transition: all 0.3s; text-align:left; z-index:9999; }
+       
+		header li{width:100px;height:30px;color:black;float:left;border-radius: 50px;text-align: left;line-height: 100px;color:white ; font-size: 1em;margin-left: 1200px; margin-right:-50px;}
+		
+		h1{color:white;font-size: 3em;text-align: center;padding-top:280px; line-height: 1.2;padding-left: 100px;padding-right: 100px;letter-spacing: -1px;z-index: 9600;}
+      
+
+
+
+       #sectionA{ background: url('./표해수충.png');background-size:100% auto;background-position: 0px -50px;}
+   
+       #sectionB{ background: url('./중심해.png');background-size:70% auto;background-position: 0px -50px;  }
+       #sectionC{ background: url('./점심해층.png');background-size:80% auto;background-position: 0px -50px; }
+       #sectionD{ background: url('./심해저대.png');background-size:90% auto;background-position: 0px -50px; }
+       #sectionE{ background: url('./초심해저대.png');background-size:150% auto;background-position: 0px -50px; }
+
+
+      </style>
+
+   </head>
+
+<body>
+	<header id="header">
+	<div id="logo">상어가족</div>
+      
+
+	
+	<div id="menu">
+		
+		<ul>
+			<li id="menu1"><img src="아기상어.png" width="300px" height="200px" ></li>
+			<br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <li id="menuA">아기상어</li>
+			<li id="menuB">엄마상어</li>
+			<li id="menuC">아빠상어</li>
+			<li id="menuD">할머니상어</li>
+			<li id="menuE">할아버지상어</li>
+		</ul>
+	</div>
+</header>
+
+<div class="section" id="sectionA">
+
+	<h1 id="titleA">아기 상어
+		<br>
+뚜루루뚜루
+<br>
+귀여운 
+<br>
+뚜루루뚜루 
+<br>
+아기상어</h1>
+	<div style="position: relative;">
+</div>
+<div class="section" id="sectionB">
+	<h1 id="titleB">
+	엄마 상어
+	<br>
+	뚜루루뚜루
+	<br>
+	어여쁜
+	<br>
+	뚜루루뚜루
+	<br>
+	엄마 상어~ </h1>
+	<div style="position: relative;left:10px;top:-70px;">
+</div>
+<div class="section" id="sectionC">
+	<h1 id="titleC">아빠 상어
+		<br>
+뚜루루뚜루
+<br>
+힘이 센 
+<br>
+뚜루루뚜루
+<br> 
+아빠 상어</h1>
+	<div style="position: relative;left:20px;top:-100px;">
+</div>
+<div class="section" id="sectionD">
+	<h1 id="titleD">할머니상어
+뚜루루뚜루
+<br>
+ 자상한
+<br>
+뚜루루뚜루 
+<br>
+할머니 상어~</h1>
+	<div style="position: relative;left:30px;top:-120px;">
+</div>
+<div class="section" id="sectionE">
+	<h1 id="titleE">할아버지상어
+		<br>
+뚜루루뚜루
+<br>
+멋있는 
+<br>
+뚜루루뚜루 
+<br>
+할아버지 상어</h1>
+	
+
+</div>
+
+<script>
+
+
+
+
+setInterval(attachBubble,100);
+
+function attachBubble(){
+var t = document.createElement("div"); 
+		t.setAttribute("class","bubble"); 
+  t.style.position = "absolute"; 
+	console.log(window.innerHeight, window.innerWidth);
+	t.style.top = randomBH(0,window.innerHeight) + "px";
+	t.style.left = randomBH(0,window.innerWidth) + "px";
+
+t.addEventListener("animationend",remove);
+
+
+
+document.body.appendChild(t); 
+
+}
+
+function remove(){
+		var t = event.target; 
+		t.parentNode.removeChild(t); 
+}
+
+
+function randomBH(min, max) {
+  		min = Math.ceil(min);
+  		max = Math.floor(max);
+  		return Math.floor(Math.random() * (max - min + 1)) + min;
+	}
+
+
+	window.onscroll = function(){
+		console.log(document.body.scrollTop);
+		var scrollH = document.body.scrollTop;
+		if (scrollH > 50 && scrollH < 120){
+			sectionA.style.backgroundAttachment = "fixed";
+		    header.style.height = "44px";
+			header.style.position = "fixed";
+			header.style.top = "0px";
+			header.style.zIndex = "9999";
+            menuA.style.color="yellow";
+
+			
+		}else{
+			sectionA.style.backgroundAttachment = "fixed";
+			header.style.height = "44px";
+			header.style.position = "fixed";
+			header.style.top = "0px";
+			header.style.zIndex = "9999";
+			menuA.style.color="white";
+
+
+			
+}
+if(scrollH > 120 && scrollH <270){
+			sectionA.style.backgroundAttachment = "fixed";
+		      	menuB.style.color="yellow";
+
+
+               
+
+			
+		}else{
+			sectionB.style.backgroundAttachment = "scroll";
+                  menuB.style.color="white";
+			
+
+
+			
+}
+if(scrollH > 410){
+			sectionB.style.backgroundAttachment = "fixed";
+			     
+		}else{
+			sectionC.style.backgroundAttachment = "scroll";
+                
+}
+if(scrollH > 410){
+			     menuC.style.color="yellow";
+		}else{
+			menuC.style.color="white";
+
+                
+			
+
+
+			
+}
+if(scrollH > 520){
+			sectionC.style.backgroundAttachment = "fixed";
+			  
+		}else{
+			sectionD.style.backgroundAttachment = "scroll";
+                 
+			
+}
+if(scrollH > 760){
+			menuD.style.color="yellow";
+			      
+		}else{
+			menuD.style.color="white";
+                    
+			
+}
+if(scrollH > 990){
+			sectionD.style.backgroundAttachment = "fixed";
+			      
+		}else{
+			sectionE.style.backgroundAttachment = "scroll";
+                    
+
+
+			
+}
+if(scrollH > 1750){
+			
+			       menuE.style.color="yellow";
+		}else{
+			
+                    menuE.style.color="white";
+
+                   }
+                  }
+
+
+			
+
+
+
+</script>
+
+</body>
